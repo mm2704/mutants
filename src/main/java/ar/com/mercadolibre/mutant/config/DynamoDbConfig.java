@@ -13,7 +13,6 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
 @Configuration
 @EnableDynamoDBRepositories
-        (basePackages = "ar.com.mercadolibre.mutants")
 public class DynamoDbConfig {
 
     @Value("${amazon.dynamodb.endpoint}")
@@ -25,6 +24,8 @@ public class DynamoDbConfig {
     @Value("${amazon.aws.secretKey}")
     private String awsSecretKey;
 
+
+    
     @Bean
     public AmazonDynamoDB amazonDynamoDB() {
         AmazonDynamoDB amazonDynamoDB
@@ -41,4 +42,8 @@ public class DynamoDbConfig {
     public AWSCredentials amazonAWSCredentials() {
         return new BasicAWSCredentials(awsAccessKey, awsSecretKey);
     }
+
+	
+	
+    
 }

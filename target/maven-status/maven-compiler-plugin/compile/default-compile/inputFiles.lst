@@ -1,3 +1,4 @@
+/Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/model/Mutant.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/service/StatsServiceImpl.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/dao/DnaDaoImpl.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/dto/StatsDTO.java
@@ -7,8 +8,8 @@
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/config/DynamoDbConfig.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/dao/DnaDao.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/searchers/MutantSearcher.java
+/Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/model/Human.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/service/MutantServiceImpl.java
-/Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/model/Dna.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/dto/DnaDTO.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/service/StatsService.java
 /Users/infra/Desktop/Mercadolibre/mutant/src/main/java/ar/com/mercadolibre/mutant/searchers/MutantSearcherImpl.java

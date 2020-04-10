@@ -1,11 +1,13 @@
 package ar.com.mercadolibre.mutant.dao;
 
-import org.springframework.stereotype.Component;
-
-import ar.com.mercadolibre.mutant.dto.DnaDTO;
+import ar.com.mercadolibre.model.Human;
+import ar.com.mercadolibre.model.Mutant;
 
 public interface DnaDao {
 
-	DnaDTO save(DnaDTO dnaDTO);
-
+	void save(Human human);
+	
+	void save(Mutant mutant);
+	
+//	List<Dna> getAll();
 }

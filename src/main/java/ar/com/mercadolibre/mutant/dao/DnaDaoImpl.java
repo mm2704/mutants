@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 
-import ar.com.mercadolibre.model.Dna;
-import ar.com.mercadolibre.mutant.dto.DnaDTO;
+import ar.com.mercadolibre.model.Human;
+import ar.com.mercadolibre.model.Mutant;
 
 @Component
 public class DnaDaoImpl implements DnaDao {
@@ -15,12 +15,22 @@ public class DnaDaoImpl implements DnaDao {
 	private DynamoDBMapper dynamoDBMapper;
 	
 
-    public DnaDTO save(DnaDTO dnaDTO) {
-    	Dna dna = new Dna();
-    	dna.setDnaId(String.join(".", dnaDTO.getDna()));
-    	dna.setMutant(dnaDTO.isMutant());
-        dynamoDBMapper.save(dna);
-        return dnaDTO;
+    public void save(Human human) {
+        dynamoDBMapper.save(human);
     }
+
+    public void save(Mutant mutant) {
+        dynamoDBMapper.save(mutant);
+    }
+    
+
+//	@Override
+//	public List<Dna> getAll() {
+//		DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+//		// Change to your model class   
+//		List<Dna> scanResult = dynamoDBMapper.scan(Dna.class, scanExpression);
+//		return scanResult;
+//
+//	}
 
 }

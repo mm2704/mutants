@@ -30,7 +30,7 @@ public class MutantEndpoint {
 	@ResponseBody
 	public ResponseEntity<String> isMutant(@RequestBody DnaDTO dnaDto) throws Exception {
 		boolean result = mutantService.isMutant(dnaDto).isMutant();
-		if(!result) {
+		if(result) {
 			return new ResponseEntity<String>(HttpStatus.OK);
 		} else {
 			return new ResponseEntity<String>(HttpStatus.FORBIDDEN);

@@ -16,6 +16,8 @@ Para saber si un ADN es mutante, consumir el servicio POST http://mutants-env.eb
 "dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
 }
 
+El servicio solo contara como mutantes, las cadenas de letras que contengan A,T,C,G.
+
 ##Resultados:
 Mutante -> 200-OK
 Humano ->  403-FORBIDDEN

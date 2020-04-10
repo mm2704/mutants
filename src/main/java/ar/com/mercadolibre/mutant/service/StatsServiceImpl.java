@@ -20,6 +20,10 @@ public class StatsServiceImpl implements StatsService {
 	private MutantHelper helper;
 	
 	@Override
+	/**
+	 * Utilice esta manera de conseguir los counts, para poder evitar el scan, ya que si es una base de datos
+	 * con gran volumen, no tendría bueno performance.
+	 */
 	public StatsDTO getStats() {
 
 		Count countMutants = dnaDao.getCount(TypesEnum.MUTANT.getValue());

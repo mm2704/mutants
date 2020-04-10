@@ -3,7 +3,7 @@
 El proyecto esta desarrollado en Java 8. Se utilizó Maven para el packaging y dependencias, SpringBoot para la creacion de la API rest, Lombok y Apache Commons.<br/>
 El war esta subido a Elastic Beanstalk, utilizando una base de datos DynamoDB.
 
-Para levantar el proyecto localmente, se debe correr la clase App para inciar SpringBoot. La base esta configurada en el proyecto, por lo que no deberia haber problemas de conectividad. <br/>
+Para levantar el proyecto localmente, se debe correr la clase App para inciar SpringBoot. La base esta configurada en el proyecto, por lo que no deberia haber problemas de conectividad. La aplicacion utiliza el puerto 5000 <br/>
 Para las credenciasles de AWS, mandarme un mail a martinmanuel2704@gmail.com<br/>
 
 ## URL de API:

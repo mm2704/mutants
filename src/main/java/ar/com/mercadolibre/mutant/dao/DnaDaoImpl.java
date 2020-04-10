@@ -1,12 +1,17 @@
 package ar.com.mercadolibre.mutant.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
-import ar.com.mercadolibre.mutant.model.Count;
 import ar.com.mercadolibre.mutant.model.Dna;
+
 
 @Component
 public class DnaDaoImpl implements DnaDao {
@@ -19,51 +24,18 @@ public class DnaDaoImpl implements DnaDao {
         dynamoDBMapper.save(dna);
     }
 	
-	@Override
-	public boolean exist(String dnaId) {
-		Dna result = dynamoDBMapper.load(Dna.class ,dnaId);
-		return result != null;
-	}
-
-	private void createNewCount(String type) {
-		Count newCount = new Count();
-		newCount.setCountId(type);
-		newCount.setCountNumber(1);
-		dynamoDBMapper.save(newCount);
-	}
 	
-	/**
-	 * Si los rows no exiten en la base, los crea con contador 1, sino los updatea
-	 */
-	@Override
-	public void updateOrCreateCount(String type) {
-		Count result = dynamoDBMapper.load(Count.class , type);
-		if(result != null) {
-			updateCount(result);
-		} else {
-			createNewCount(type);
-		}		
-	}
-
-	/**
-	 * Update al cantidad de humanos o mutantes en la base de datos
-	 * @param result
-	 */
-	private void updateCount(Count result) {
-		result.setCountId(result.getCountId());
-		result.setCountNumber(result.getCountNumber() +1);
-		dynamoDBMapper.save(result);
-	}
 	
 	@Override
-	public Count getCount(String type) {
-		Count result = dynamoDBMapper.load(Count.class , type);
-		if(result == null) {
-			Count resultEmpty = new Count();
-			resultEmpty.setCountId(type);
-			resultEmpty.setCountNumber(0);
-			return resultEmpty;
-		}
-		return result;
-	} 	
+	public Integer getCountOf(String bioType) {
+        Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+        eav.put(":val1", new AttributeValue().withS(bioType));
+
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression()
+            .withFilterExpression("BioType = :val1").withExpressionAttributeValues(eav);
+
+        Integer result = dynamoDBMapper.count(Dna.class, scanExpression);
+        return result;
+	}
+	
 }

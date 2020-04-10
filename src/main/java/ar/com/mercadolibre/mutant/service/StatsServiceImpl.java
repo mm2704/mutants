@@ -7,7 +7,6 @@ import ar.com.mercadolibre.mutant.dao.DnaDao;
 import ar.com.mercadolibre.mutant.dto.StatsDTO;
 import ar.com.mercadolibre.mutant.enums.TypesEnum;
 import ar.com.mercadolibre.mutant.helper.MutantHelper;
-import ar.com.mercadolibre.mutant.model.Count;
 
 @Service
 public class StatsServiceImpl implements StatsService {
@@ -21,14 +20,14 @@ public class StatsServiceImpl implements StatsService {
 	
 	@Override
 	/**
-	 * Utilice esta manera de conseguir los counts, para poder evitar el scan, ya que si es una base de datos
-	 * con gran volumen, no tendría bueno performance.
+	 * Devuelve la cantidad de humanos y mutantes.
 	 */
 	public StatsDTO getStats() {
 
-		Count countMutants = dnaDao.getCount(TypesEnum.MUTANT.getValue());
-		Count countHumans = dnaDao.getCount(TypesEnum.HUMAN.getValue());
-		StatsDTO stats = helper.getStats(countMutants.getCountNumber(), countHumans.getCountNumber());
+		
+		Integer countHumans = dnaDao.getCountOf(TypesEnum.HUMAN.getValue());
+		Integer countMutants = dnaDao.getCountOf(TypesEnum.MUTANT.getValue());
+		StatsDTO stats = helper.getStats(countMutants, countHumans);
 		return stats;
 	}
 

@@ -30,13 +30,10 @@ public class MutantServiceImpl implements MutantService {
 	public DnaDTO isMutant(DnaDTO dnaDto) {
 		DnaDTO result = mutantSearcher.searchMutant(dnaDto);
 		String dnaId = String.join(".",result.getDna());
-		if(!dnaDao.exist(dnaId)) {
-			Dna dna = new Dna();
-			dna.setDnaId(dnaId);
-			dna.setMutant(result.isMutant());
-			dnaDao.save(dna);
-			dnaDao.updateOrCreateCount(helper.getType(dnaDto));
-		}
+		Dna dna = new Dna();
+		dna.setDnaId(dnaId);
+		dna.setBioType(helper.getType(dnaDto));
+		dnaDao.save(dna);
 			
 		return result;
 	}

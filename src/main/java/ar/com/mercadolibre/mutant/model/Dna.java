@@ -20,8 +20,8 @@ public class Dna {
     @DynamoDBHashKey(attributeName = "DnaId")
     private String dnaId;
     
-    @DynamoDBTyped(DynamoDBAttributeType.BOOL)
-    @DynamoDBAttribute(attributeName="isMutant")
-    private boolean isMutant;
+    @DynamoDBTyped(DynamoDBAttributeType.S)
+    @DynamoDBAttribute(attributeName="BioType")
+    private String bioType;
     
 }

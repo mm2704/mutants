@@ -7,14 +7,14 @@ import lombok.Data;
 @Data
 public class StatsDTO {
 
-
+		
 	@JsonProperty("count_mutant_dna")
 	private Integer countMutantDna;
 	
 	@JsonProperty("count_human_dna")
-	private Integer CountHumanDna;
+	private Integer countHumanDna;
 	
 	@JsonProperty("ratio")
-	private Integer ratio;
+	private Double ratio;
 	
 }

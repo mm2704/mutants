@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import ar.com.mercadolibre.mutant.model.DnaDTO;
-import ar.com.mercadolibre.mutant.model.StatsDto;
-import ar.com.mercadolibre.mutant.service.MutantService;
-import ar.com.mercadolibre.mutant.service.StatsService;
+import ar.com.mercadolibre.mutant.dto.DnaDTO;
+import ar.com.mercadolibre.mutant.dto.StatsDTO;
+import ar.com.mercadolibre.mutant.service.MutantServiceImpl;
+import ar.com.mercadolibre.mutant.service.StatsServiceImpl;
 
 @Controller
 public class MutantEndpoint {
 
 	@Autowired
-	private MutantService mutantService;
+	private MutantServiceImpl mutantService;
 	
 	@Autowired
-	private StatsService statsService;
+	private StatsServiceImpl statsService;
 	
 	
 	@PostMapping("/mutant/")
@@ -38,7 +38,7 @@ public class MutantEndpoint {
 	}
 	
 	@GetMapping("/stats")
-	public StatsDto getStats() {
+	public StatsDTO getStats() {
 		return statsService.getStats();
 	}
 	

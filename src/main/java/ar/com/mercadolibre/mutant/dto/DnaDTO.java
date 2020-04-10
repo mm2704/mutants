@@ -1,4 +1,4 @@
-package ar.com.mercadolibre.mutant.model;
+package ar.com.mercadolibre.mutant.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

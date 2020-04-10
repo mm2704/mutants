@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: mutant
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: infra
+buildTime: 2020-04-09T23:21:47Z
+Implementation-Vendor-Id: ar.com.mercadolibre
+Build-Jdk: 1.8.0_231
+Created-By: Maven Integration for Eclipse
+

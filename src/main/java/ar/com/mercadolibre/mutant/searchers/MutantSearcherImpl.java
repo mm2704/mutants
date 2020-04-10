@@ -25,10 +25,10 @@ public class MutantSearcherImpl implements MutantSearcher {
 	public DnaDTO searchMutant(DnaDTO dnaDto) {
 
 		String[] dna = dnaDto.getDna();
-    	Integer fileLength = dna.length;
-    	Integer columnLength = dna[0].length();	
+    	Integer fileLength = dna[0].length();
+    	Integer columnLength = dna.length;
     	String[][] matrix = new String[columnLength][fileLength];
-    	fillMatrix(dna, matrix, fileLength, columnLength);
+    	fillMatrix(dna, matrix, columnLength);
 		
     	boolean isMutant = (searchForMutant(Arrays.asList(dna)) || searchVerticalMutant(matrix, fileLength, columnLength)
     	    	|| searchDiagonalMutant(matrix));
@@ -81,8 +81,8 @@ public class MutantSearcherImpl implements MutantSearcher {
      * @param fileLength
      * @param columnLength
      */
-    private void fillMatrix(String[] dna ,String[][] matrix, Integer fileLength, Integer columnLength) {
-    	for (int i = 0; i < fileLength; i++) {
+    private void fillMatrix(String[] dna ,String[][] matrix, Integer columnLength) {
+    	for (int i = 0; i < columnLength; i++) {
     		addColumn(dna[i], matrix, i);	
 		}
     }

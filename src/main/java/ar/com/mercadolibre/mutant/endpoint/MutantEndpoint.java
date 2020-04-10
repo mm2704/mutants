@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import ar.com.mercadolibre.mutant.dto.DnaDTO;
+import ar.com.mercadolibre.mutant.helper.MutantHelper;
 import ar.com.mercadolibre.mutant.service.MutantServiceImpl;
 
 @Controller
@@ -17,6 +18,9 @@ public class MutantEndpoint {
 
 	@Autowired
 	private MutantServiceImpl mutantService;
+	
+	@Autowired
+	private MutantHelper mutantHelper;
 	
 	
 	@PostMapping("/mutant/")

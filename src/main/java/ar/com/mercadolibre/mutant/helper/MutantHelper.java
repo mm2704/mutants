@@ -9,8 +9,13 @@ import ar.com.mercadolibre.mutant.enums.TypesEnum;
 
 @Component
 public class MutantHelper {
-
 	
+
+	/**
+	 * Devuelve el tipo de adn
+	 * @param dna
+	 * @return
+	 */
 	public String getType(DnaDTO dna) {
 		if(dna.isMutant()) {
 			return TypesEnum.MUTANT.getValue();
@@ -19,6 +24,12 @@ public class MutantHelper {
 		}
 	}
 	
+	/**
+	 * Devuelve un objeto Stats con los seteos de ratio y count correspondientes.
+	 * @param mutantsCount
+	 * @param humanCounts
+	 * @return
+	 */
 	public StatsDTO getStats(Integer mutantsCount, Integer humanCounts) {
 		StatsDTO result = new StatsDTO(); 
 		result.setCountMutantDna(mutantsCount);

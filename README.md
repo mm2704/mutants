@@ -1,7 +1,9 @@
 # mutants
 
-El proyecto esta desarrollado en Java 8. Se utilizó Maven para el packagin y dependencias, SpringBoot para la creacion de la API rest, Lombok y Apache Commons.
+El proyecto esta desarrollado en Java 8. Se utilizó Maven para el packaging y dependencias, SpringBoot para la creacion de la API rest, Lombok y Apache Commons.
 El war esta subido a Elastic Beanstalk, utilizando una base de datos DynamoDB.
+
+Para las credenciasles de AWS, mandarme un mail a martinmanuel2704@gmail.com
 
 URL de API:
 http://mutants-env.eba-3rq7bcub.sa-east-1.elasticbeanstalk.com

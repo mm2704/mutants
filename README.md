@@ -23,7 +23,7 @@ Stats:
 Para conocer la cantidad de humanos, mutantes y su ratio, consumir el servicio GET http://mutants-env.eba-3rq7bcub.sa-east-1.elasticbeanstalk.com/stats
 
 Resultado:
-JSON -> {“count_mutant_dna”:40, “count_human_dna”:100: “ratio”:0.4}
+JSON -> {“count_mutant_dna”:40, “count_human_dna”:100, “ratio”:0.4}
 
 
 

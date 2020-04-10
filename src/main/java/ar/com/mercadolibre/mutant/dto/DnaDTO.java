@@ -10,4 +10,5 @@ public class DnaDTO {
 	@JsonProperty("dna")
 	private String[] dna;
 	
+	private boolean isMutant;
 }

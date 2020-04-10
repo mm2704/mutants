@@ -4,7 +4,7 @@ import ar.com.mercadolibre.mutant.dto.DnaDTO;
 
 public interface MutantSearcher {
     
-	boolean searchMutant(DnaDTO dnaDto);
+	DnaDTO searchMutant(DnaDTO dnaDto);
 
 	
 }

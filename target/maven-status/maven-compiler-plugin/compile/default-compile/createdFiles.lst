@@ -1,6 +1,15 @@
+ar/com/mercadolibre/mutant/service/MutantServiceImpl.class
+ar/com/mercadolibre/mutant/service/StatsService.class
+ar/com/mercadolibre/mutant/config/DynamoDbConfig.class
+ar/com/mercadolibre/mutant/dao/DnaDao.class
+ar/com/mercadolibre/mutant/searchers/MutantSearcherImpl.class
+ar/com/mercadolibre/mutant/service/StatsServiceImpl.class
 ar/com/mercadolibre/mutant/endpoint/MutantEndpoint.class
-ar/com/mercadolibre/mutant/model/DnaDTO.class
+ar/com/mercadolibre/mutant/dao/DnaDaoImpl.class
 ar/com/mercadolibre/mutant/enums/LettersEnum.class
+ar/com/mercadolibre/mutant/dto/StatsDTO.class
 ar/com/mercadolibre/mutant/searchers/MutantSearcher.class
 ar/com/mercadolibre/mutant/App.class
 ar/com/mercadolibre/mutant/service/MutantService.class
+ar/com/mercadolibre/mutant/dto/DnaDTO.class
+ar/com/mercadolibre/model/Dna.class

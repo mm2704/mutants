@@ -17,11 +17,11 @@ public class MutantSearcherImpl implements MutantSearcher {
 	
 	
 	/**
-	 * Devuelve un booleano indicando si encontro gen mutante.
+	 * Devuelve el dnaDTO con el valor si es o no mutante.
 	 * @param dna
 	 * @return
 	 */
-	public boolean searchMutant(DnaDTO dnaDto) {
+	public DnaDTO searchMutant(DnaDTO dnaDto) {
 
 		String[] dna = dnaDto.getDna();
     	Integer fileLength = dna.length;
@@ -29,8 +29,10 @@ public class MutantSearcherImpl implements MutantSearcher {
     	String[][] matrix = new String[columnLength][fileLength];
     	fillMatrix(dna, matrix, fileLength, columnLength);
 		
-    	return (searchForMutant(Arrays.asList(dna)) || searchVerticalMutant(matrix, fileLength, columnLength)
-    	|| searchDiagonalMutant(matrix));
+    	boolean isMutant = (searchForMutant(Arrays.asList(dna)) || searchVerticalMutant(matrix, fileLength, columnLength)
+    	    	|| searchDiagonalMutant(matrix));
+    	dnaDto.setMutant(isMutant);
+    	return dnaDto;
 	}
 	
     /**

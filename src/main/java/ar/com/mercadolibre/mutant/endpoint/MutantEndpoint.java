@@ -28,8 +28,8 @@ public class MutantEndpoint {
 	@PostMapping("/mutant/")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public ResponseEntity<String> isMutant(@RequestBody DnaDTO dnaDto) throws Exception { // CAMBIAR A JSON
-		boolean result = mutantService.isMutant(dnaDto);
+	public ResponseEntity<String> isMutant(@RequestBody DnaDTO dnaDto) throws Exception {
+		boolean result = mutantService.isMutant(dnaDto).isMutant();
 		if(!result) {
 			return new ResponseEntity<String>(HttpStatus.OK);
 		} else {

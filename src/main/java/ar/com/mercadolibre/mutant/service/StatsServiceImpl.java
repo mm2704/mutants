@@ -22,9 +22,7 @@ public class StatsServiceImpl implements StatsService {
 	/**
 	 * Devuelve la cantidad de humanos y mutantes.
 	 */
-	public StatsDTO getStats() {
-
-		
+	public StatsDTO getStats() {	
 		Integer countHumans = dnaDao.getCountOf(TypesEnum.HUMAN.getValue());
 		Integer countMutants = dnaDao.getCountOf(TypesEnum.MUTANT.getValue());
 		StatsDTO stats = helper.getStats(countMutants, countHumans);

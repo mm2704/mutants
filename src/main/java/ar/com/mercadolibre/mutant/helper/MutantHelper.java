@@ -1,6 +1,9 @@
 package ar.com.mercadolibre.mutant.helper;
 
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 import org.springframework.stereotype.Component;
 
 import ar.com.mercadolibre.mutant.dto.DnaDTO;
@@ -38,7 +41,8 @@ public class MutantHelper {
 		if(humanCounts == 0) {
 			result.setRatio(new Double(mutantsCount));
 		} else {
-			result.setRatio(new Double(mutantsCount)/new Double(humanCounts));
+			Double radio = new Double(mutantsCount)/new Double(humanCounts);
+			result.setRatio(Math.round(radio * 10) / 10.0);
 		}
 		return result;
 	}

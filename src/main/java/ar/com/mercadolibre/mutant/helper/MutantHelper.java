@@ -38,7 +38,7 @@ public class MutantHelper {
 		if(humanCounts == 0) {
 			result.setRatio(new Double(mutantsCount));
 		} else {
-			result.setRatio(new Double((mutantsCount)/humanCounts));
+			result.setRatio(new Double(mutantsCount)/new Double(humanCounts));
 		}
 		return result;
 	}
